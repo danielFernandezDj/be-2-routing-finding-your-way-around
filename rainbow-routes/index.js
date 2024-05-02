@@ -15,19 +15,21 @@ app.get('/', function (req, res) {
     `)
 })
 
-// Color Page
-app.get('/:color', function (req, res) {
-    let myColor = req.params.color
+// Teal Page
+app.get('/teal', function (req, res) {
     res.send(`
         <body style="margin: 0;">
-            <div style="border: 1px solid black; height: 10vh; background-color: ${myColor};">
+            <div style="border: 1px solid black; height: 10vh; background-color: teal;">
                 <h2 style="text-align: center;">NAV BAR</h2>
             </div>
-            <h1 style="color: ${myColor};">${myColor} Page</h1>
+            <h1 style="color: teal;">Teal Page</h1>
         </body>
     `)
 })
 
+app.post('/:color', (req, res) => {
+    res.send('Hello world')
+})
 
 // Keep the server open.
 app.listen(process.env.PORT)
